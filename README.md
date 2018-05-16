@@ -16,11 +16,15 @@ It can be run using the command
 
     python XOR.py <activation function> [<hidden activation function>]
   
-where <activation function> is specified as one of the following:
-    • sigmoid
-    • tanh
-    • relu
-    • softmax
+where \<activation function\> is specified as one of the following:
+
+• sigmoid
+
+• tanh
+
+• relu
+
+• softmax
   
 and <hidden activation function> must be specified when using softmax output activation.
   
