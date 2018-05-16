@@ -26,7 +26,7 @@ where \<activation function\> is specified as one of the following:
 
 • softmax
   
-and <hidden activation function> must be specified when using softmax output activation.
+and \<hidden activation function\> must be specified when using softmax output activation.
   
 e.g.
     
