@@ -1,6 +1,6 @@
 # MultiLayerPerceptron
 
-Implementation of the most simple MLP with a single hidden layer written from scratch in Python in an OOP programming style, using no Machine Learning related libraries, mainly for the aim of practicing my understanding of the backpropagation algorithm.
+Implementation of the most simple MLP with a single hidden layer written from scratch in Python in an OOP programming style, using no Machine/Deep Learning related libraries, mainly for the aim of practicing my understanding of the backpropagation algorithm.
 
 The MLP is constructed in such a way that the user can specify to use Sigmoid, Hyperbolic Tangent, Rectified Linear Unit, or Softmax activation functions in the hidden and output layers.
 In the case that Softmax is chosen for the output layer, the user specifies which of the other three to use in the hidden layer.
