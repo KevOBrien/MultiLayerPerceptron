@@ -14,7 +14,7 @@ Once the MLP is trained, new unseen data can easily be fed into it using the `ML
 This script is a simple test of learning the XOR function to ensure that the MLP functions correctly. 
 It can be run using the command
 
-	python XOR.py <activation function> [<hidden activation function>]
+    python XOR.py <activation function> [<hidden activation function>]
   
 where <activation function> is specified as one of the following:
     • sigmoid
@@ -24,8 +24,11 @@ where <activation function> is specified as one of the following:
   
 and <hidden activation function> must be specified when using softmax output activation.
   
-e.g.	`python XOR.py sigmoid`
-      `python XOR.py softmax relu`
+e.g.
+    
+    python XOR.py sigmoid
+    
+    python XOR.py softmax relu
       
 The labels are set as [1, 0] = 0 and [0, 1] = 1 when using softmax at the output.
 
@@ -34,44 +37,74 @@ The MLP is trained for 10,000 epochs of the four examples in the data set, using
 Sigmoid activations reached a loss value as a factor of e-5, tanh reached e-9, and ReLU was far better reaching e-30 (however, ReLU often got stuck in a local minimum with a loss value plateauing at ~0.252 and 0% accuracy, and had to be re-ran). Softmax performed the worst reaching a minimum loss of ~0.0002 with ReLU hidden activations, however using softmax here is pointless anyway as it is just a binary classification problem. Interestingly, softmax followed the same trend depending on the hidden activations, with sigmoid being the worst, then tanh, and ReLU being the best.
 
 Here is the training output when using ReLU:
+
 EPOCH:       0
+
 TRAIN LOSS:  0.5961961001004048
+
 TRAIN ACC:   75.00 %
 
+
 EPOCH:       1000
+
 TRAIN LOSS:  3.5097826581212955e-09
+
 TRAIN ACC:   100.00 %
+
 
 EPOCH:       2000
+
 TRAIN LOSS:  1.3865907988348844e-19
+
 TRAIN ACC:   100.00 %
+
 
 EPOCH:       3000
+
 TRAIN LOSS:  1.5248067856483038e-29
+
 TRAIN ACC:   100.00 %
+
 
 EPOCH:       4000
+
 TRAIN LOSS:  5.451728152839408e-30
+
 TRAIN ACC:   100.00 %
+
 
 EPOCH:       5000
+
 TRAIN LOSS:  5.447776057961296e-30
+
 TRAIN ACC:   100.00 %
+
 
 EPOCH:       6000
+
 TRAIN LOSS:  5.445635863586688e-30
+
 TRAIN ACC:   100.00 %
+
 
 EPOCH:       7000
+
 TRAIN LOSS:  5.443160774968744e-30
+
 TRAIN ACC:   100.00 %
+
 
 EPOCH:       8000
+
 TRAIN LOSS:  5.444237925176209e-30
+
 TRAIN ACC:   100.00 %
 
+
 EPOCH:       9000
+
 TRAIN LOSS:  5.442954822981523e-30
+
 TRAIN ACC:   100.00 %
 
 
@@ -94,32 +127,55 @@ Through experimenting, I found that updating the weights throughout each epoch, 
 Through experimenting, I found that a learning rate of 0.0005 was sufficient for all hidden activation functions, and thus I ran a test to determine which hidden activation produced the best results, and to compare the difference in accuracy between a relatively small and large hidden layer. I ran a loop to train 1,000 epochs on MLPs with 10 and 100 hidden units, for each hidden activation of sigmoid, tanh, and ReLU.
 
 SIGMOID 10
+
 TRAIN LOSS:  0.9202531575996378
+
 TRAIN ACC:   74.29 %
+
 TEST LOSS:   0.9835192744762707
+
 TEST ACC:    72.10 %
 
+
 SIGMOID 100
+
 TRAIN LOSS:  0.6195099794297375
+
 TRAIN ACC:   82.33 %
+
 TEST LOSS:   0.6726217678673162
+
 TEST ACC:    81.65 %
 
+
 TANH 10
+
 TRAIN LOSS:  1.299714412800753
+
 TRAIN ACC:   61.84 %
+
 TEST LOSS:   1.3211631090501172
+
 TEST ACC:    60.72 %
 
+
 TANH 100
+
 TRAIN LOSS:  0.2941544206086196
+
 TRAIN ACC:   91.27 %
+
 TEST LOSS:   0.3493040494200178
+
 TEST ACC:    89.50 %
 
+
 RELU 10
+
 TRAIN LOSS:  0.8187549876846995
+
 TRAIN ACC:   77.13 %
+
 TEST LOSS:   0.8429721368541108
 TEST ACC:    77.05 %
 
