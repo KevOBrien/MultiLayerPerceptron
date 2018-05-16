@@ -38,75 +38,47 @@ Sigmoid activations reached a loss value as a factor of e-5, tanh reached e-9, a
 
 Here is the training output when using ReLU:
 
+`
 EPOCH:       0
-
 TRAIN LOSS:  0.5961961001004048
-
 TRAIN ACC:   75.00 %
 
-
 EPOCH:       1000
-
 TRAIN LOSS:  3.5097826581212955e-09
-
 TRAIN ACC:   100.00 %
-
 
 EPOCH:       2000
-
 TRAIN LOSS:  1.3865907988348844e-19
-
 TRAIN ACC:   100.00 %
-
 
 EPOCH:       3000
-
 TRAIN LOSS:  1.5248067856483038e-29
-
 TRAIN ACC:   100.00 %
-
 
 EPOCH:       4000
-
 TRAIN LOSS:  5.451728152839408e-30
-
 TRAIN ACC:   100.00 %
-
 
 EPOCH:       5000
-
 TRAIN LOSS:  5.447776057961296e-30
-
 TRAIN ACC:   100.00 %
-
 
 EPOCH:       6000
-
 TRAIN LOSS:  5.445635863586688e-30
-
 TRAIN ACC:   100.00 %
-
 
 EPOCH:       7000
-
 TRAIN LOSS:  5.443160774968744e-30
-
 TRAIN ACC:   100.00 %
-
 
 EPOCH:       8000
-
 TRAIN LOSS:  5.444237925176209e-30
-
 TRAIN ACC:   100.00 %
-
 
 EPOCH:       9000
-
 TRAIN LOSS:  5.442954822981523e-30
-
 TRAIN ACC:   100.00 %
-
+`
 
 ## LetterRecognition.py
 
@@ -126,6 +98,7 @@ Through experimenting, I found that updating the weights throughout each epoch, 
 
 Through experimenting, I found that a learning rate of 0.0005 was sufficient for all hidden activation functions, and thus I ran a test to determine which hidden activation produced the best results, and to compare the difference in accuracy between a relatively small and large hidden layer. I ran a loop to train 1,000 epochs on MLPs with 10 and 100 hidden units, for each hidden activation of sigmoid, tanh, and ReLU.
 
+`
 SIGMOID 10
 
 TRAIN LOSS:  0.9202531575996378
@@ -184,14 +157,16 @@ TRAIN LOSS:  0.7116147343482598
 TRAIN ACC:   78.84 %
 TEST LOSS:   0.8360834641994478
 TEST ACC:    76.22 %
+`
 
 Very interestingly, the tanh MLP performed the worst out of any activation functions with 10 hidden neurons, but was by far the most superior with 100 hidden neurons. This was the MLP I chose to train for further epochs (3,000) to see what test accuracy could be achieved. I was impressed to see the following best results after this training session:
 
+`
 TRAIN LOSS:  0.10430746849205702
 TRAIN ACC:   97.12 %
 TEST LOSS:   0.16316118878900224
 TEST ACC:    94.97 %
-
+`
 When the model is training, it repeatedly evaluates itself on the test set every n epochs, and if the loss achieved here is the lowest thus far, it stores all the parameters of the current state of the MLP. This is the same model that will be loaded if the script is ran with the ‘load’ option.
 
 I noticed that the loss was still decreasing steadily for both the training and test sets after these 3,000 epochs, so I think with even more training epochs, as well as a method for varying the learning rate appropriately, rather than leaving it constant, would be able to increase the accuracy further closer to 100%.
